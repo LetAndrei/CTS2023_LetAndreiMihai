@@ -3,6 +3,9 @@ package cts.s02.principii_clean_code.clase;
 import java.util.Arrays;
 
 public class Angajat extends Aplicant{
+	
+	private static int sumaFinantata=10;
+	
 	private String ocupatie;
 	private int salariu;
 	
@@ -29,19 +32,17 @@ public class Angajat extends Aplicant{
 	}
 	
 	
+	public static void setSumaFinantata(int sumaFinantata) {
+		Angajat.sumaFinantata = sumaFinantata;
+	}
 	@Override
 	public String toString() {
-		return "Angajat: Nume=" + nume + ", Prenume=" + prenume
-				+ ", Varsta=" + varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Ocupatie=" + ocupatie + ", salariu=" + salariu;
+		return "Angajat: "+super.toString() + "Ocupatie=" + ocupatie + ", salariu=" + salariu;
 	}
 	
 	
-	public int finantare() {
-		int s=10;
-		// TODO Auto-generated method stub
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public void afisareFinantare() {
+		System.out.println("Angajatul "+super.afisareFinantare(sumaFinantata));
 	}
 	
 }
