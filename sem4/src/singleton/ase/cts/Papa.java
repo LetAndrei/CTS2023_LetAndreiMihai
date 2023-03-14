@@ -5,6 +5,7 @@ public class Papa {
 	private String nume;
 	private int nrAniFunctie;
 	private int alCatelea;
+	private static Papa papa = new Papa("Benedict",2,276); //eager initialisation
 	
 	public Papa(String nume, int nrAniFunctie, int alCatelea) {
 		super();
@@ -32,6 +33,8 @@ public class Papa {
 		this.alCatelea = alCatelea;
 	}
 	
-	
+	public static Papa getInstance() {
+		return papa; //eager initialisation
+	}
 	
 }
